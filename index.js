@@ -19,7 +19,7 @@ if (args[0] == '--help' || args[0] == 'help' || args[0] == '-h') {
 
 // Eligible characters message to inform the user what is used in there password creation
 function printEligibilityCharactersMessage() {
-    console.log('All lowercase letters are eligible  the password and also every number is eligible for the password as well');
+    console.log('All lowercase letters and every number are eligible for the password');
 }
 
 // Prints out the eligibility message
