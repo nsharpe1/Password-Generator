@@ -5,7 +5,7 @@ const crypto = require('crypto');
 
 // Help message informing the user how to use the app
 function printHelpMessage() {
-    console.log('--length, -l: Provide a certain number length of the password by typing "npx password-generator --length `Number goes here`" (Note: If you type in a negative number length you will get and error message and the program wont generate the lowercase password  Also,  If password length number is not provided the password length number is automatically set to 8)');
+    console.log('--length, -l: Provide a certain number length of the password by typing "npx password-generator --length `Number goes here`" (Note: If you type in a negative number length you will get an error message and the program wont generate the lowercase password  Also,  If password length number is not provided the password length number is automatically set to 8)');
     console.log('--eligible, eligible, -e: See the characters that are eligible for the password');
     console.log('--help, help -h: Show help message');
 }
@@ -45,9 +45,9 @@ function generateLowerscasePassword(length) {
 }
 
 // Generating the lowercase letter and number password using a provided number password length
-const lengthIndex = args.indexOf('--length') !== -1 ? args.indexOf('--length') : args.indexOf('-l');
-if (lengthIndex !== -1 && args[lengthIndex + 1]) {
-    const lengthArg = parseInt(args[lengthIndex + 1], 10);
+const lengthVaraible = args.indexOf('--length') !== -1 ? args.indexOf('--length') : args.indexOf('-l');
+if (lengthVaraible !== -1 && args[lengthVaraible + 1]) {
+    const lengthArg = parseInt(args[lengthVaraible + 1], 10);
     if (isNaN(lengthArg) || lengthArg <= 0) {
         console.error('Error: Password length number must be a positive number');
         printUsage();
