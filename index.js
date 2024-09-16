@@ -3,14 +3,28 @@
 const process = require('node:process');
 const crypto = require('crypto');
 
+// Help message informing the user how to use the app
 function printHelpMessage() {
     console.log('--length, -l: Provide a certain number length of the password by typing "npx password-generator --length `Number goes here`" (Note: If you type in a negative number length you will get and error message and the program wont generate the lowercase password  Also,  If password length number is not provided the password length number is automatically set to 8)');
-    console.log('--help, -h: Show help message');
+    console.log('--eligible, eligible, -e: See the characters that are eligible for the password');
+    console.log('--help, help -h: Show help message');
 }
 
+// Prints out the help message
 const args = process.argv.slice(2);
-if (args[0] == '--help' || args[0] == '-h') {
+if (args[0] == '--help' || args[0] == 'help' || args[0] == '-h') {
     printHelpMessage();
+    return;
+}
+
+// Eligible characters message to inform the user what is used in there password creation
+function printEligibilityCharactersMessage() {
+    console.log('All lowercase letters are eligible for the password and also every number is eligible for the password as well');
+}
+
+// Prints out the eligibility message
+if (args[0] == '--eligible' || args[0] == 'eligible' || args[0] == '-e') {
+    printEligibilityCharactersMessage();
     return;
 }
 
@@ -18,7 +32,6 @@ if (args[0] == '--help' || args[0] == '-h') {
 const DEFAULT_LENGTH = 8;
 
 // Generating the lowercase password using default password length
-
 let length = DEFAULT_LENGTH;
 
 function generateLowerscasePassword(length) {
@@ -31,7 +44,7 @@ function generateLowerscasePassword(length) {
     return password;
 }
 
-// Generating the lowercase password using a provided number password length
+// Generating the lowercase letter and number password using a provided number password length
 const lengthIndex = args.indexOf('--length') !== -1 ? args.indexOf('--length') : args.indexOf('-l');
 if (lengthIndex !== -1 && args[lengthIndex + 1]) {
     const lengthArg = parseInt(args[lengthIndex + 1], 10);
@@ -43,5 +56,6 @@ if (lengthIndex !== -1 && args[lengthIndex + 1]) {
     length = lengthArg;
 }
 
+// Prints out the password created
 const password = generateLowerscasePassword(length);
 console.log(password);
