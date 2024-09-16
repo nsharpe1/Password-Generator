@@ -50,7 +50,7 @@ if (lengthVaraible !== -1 && args[lengthVaraible + 1]) {
     const lengthArg = parseInt(args[lengthVaraible + 1], 10);
     if (isNaN(lengthArg) || lengthArg <= 0) {
         console.error('Error: Password length number must be a positive number');
-        printUsage();
+        printHelpMessage();
         process.exit(1);
     }
     length = lengthArg;
