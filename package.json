@@ -1,0 +1,22 @@
+{
+  "name": "password-generator",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "password-generator": "./index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "Password Generator"
+  },
+  "keywords": [
+    "QAP",
+    "#1"
+  ],
+  "author": "Nicholas Sharpe",
+  "license": "ISC",
+  "description": ""
+}
