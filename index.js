@@ -17,17 +17,6 @@ if (args[0] == '--help' || args[0] == 'help' || args[0] == '-h') {
     return;
 }
 
-// Eligible characters message to inform the user what is used in there password creation
-function printEligibilityCharactersMessage() {
-    console.log('All lowercase letters are eligible for the password and also every number is eligible for the password as well');
-}
-
-// Prints out the eligibility message
-if (args[0] == '--eligible' || args[0] == 'eligible' || args[0] == '-e') {
-    printEligibilityCharactersMessage();
-    return;
-}
-
 // Default password length
 const DEFAULT_LENGTH = 8;
 
