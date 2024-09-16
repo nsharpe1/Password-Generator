@@ -31,7 +31,7 @@ if (args[0] == '--eligible' || args[0] == 'eligible' || args[0] == '-e') {
 // Default password length
 const DEFAULT_LENGTH = 8;
 
-// Generating the lowercase password using default password length
+// Generating the lowercase letter and number password using default password length
 let length = DEFAULT_LENGTH;
 
 function generateLowerscasePassword(length) {
@@ -49,7 +49,7 @@ const lengthIndex = args.indexOf('--length') !== -1 ? args.indexOf('--length') :
 if (lengthIndex !== -1 && args[lengthIndex + 1]) {
     const lengthArg = parseInt(args[lengthIndex + 1], 10);
     if (isNaN(lengthArg) || lengthArg <= 0) {
-        console.error('Error: Password length must be a positive number');
+        console.error('Error: Password length number must be a positive number');
         printUsage();
         process.exit(1);
     }
