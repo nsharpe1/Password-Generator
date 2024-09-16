@@ -5,7 +5,7 @@ const crypto = require('crypto');
 
 // Help message informing the user how to use the app
 function printHelpMessage() {
-    console.log('--length, -l: Provide a certain number length of the password by typing "npx password-generator --length `Number goes here`" (Note: If you type in a negative number length you will get an error message and the program wont generate the lowercase password  Also,  If password length number is not provided the password length number is automatically set to 8)');
+    console.log('--length, -l: Provide a certain number length of the password by typing "npx password-generator `--length or -l` <Number goes here>" (Note: If password length number is not provided the password length number is automatically set to 8)');
     console.log('--eligible, eligible, -e: See the characters that are eligible for the password');
     console.log('--help, help -h: Show help message');
 }
